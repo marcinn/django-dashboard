@@ -1,0 +1,13 @@
+{% load gadgets %}
+<div class="widget-head{% if widget.collapsible %} collapsible{% endif %}{% if widget.editable %} editable{% endif %}{% if widget.removable %} removable{% endif %}">
+    {% block gadget_head%}
+    <h4>{{ widget.title }}</h4>
+    {% endblock %}
+</div>
+<div class="edit-box" style="display: none;">
+    {% render_edit_form gadget model %}
+</div>
+<div class="widget-content">
+    {% block gadget_content %}
+    {% endblock %}
+</div>
